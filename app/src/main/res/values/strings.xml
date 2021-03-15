@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">AvtoBlogFragment</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="Motor">ДВС</string>
+    <string name="Year">Год</string>
+    <string name="Kpp">Коробка передач</string>
+    <string name="Power">Мощность</string>
+    <string name="Electro">Электро</string>
+    <string name="Avtomat">Автомат</string>
+    <string name="Benzin">Бензин</string>
+    <string name="Mehanika">Механика</string>
+    <string name="TehHar">Технические характеристики</string>
+    <string name="Dizel">Дизель</string>
+    <string name="Motorsize">О.д.</string>
+    <string name="todo">TODO</string>
+    <string name="Brand">Марка</string>
+    <string name="El">электро</string>
+    <string name="Ben">бензин</string>
+    <string name="Diz">дизель</string>
+    <string name="save">Сохранить</string>
+    <string name="motorsize">О.Д.</string>
+    <string name="Model">Модель</string>
+    <string name="year">Год выпуска</string>
+    <string name="mileage">Пробег</string>
+    <string name="_0_km">0 km</string>
+    <string name="Mileage">Пробег</string>
+    <string name="_0">0 л.с.</string>
+    <string name="tvModelGl">Модель:</string>
+    <string name="tvMileageGl">Пробег:</string>
+    <string name="tvMotorGl">Двигатель:</string>
+    <string name="tvTowerGl">Мощность:</string>
+    <string name="tvYearGl">Год:</string>
+    <string name="tvBrandGl">Марка:</string>
+    <string name="tvMotorsizeGl">Объем:</string>
+    <string name="tvKPPGl">КПП:</string>
+    <string name="tvOD">0 см.куб.</string>
+    <string name="tvPowersize">Объем двигателя</string>
+    <string name="Add">Добавить</string>
+</resources>

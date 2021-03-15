@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="140dp">
+
+    <ImageView
+        android:id="@+id/ivAvto"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toStartOf="@+id/tvBrand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvBrand"
+        android:layout_width="70dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="3dp"
+        android:gravity="center"
+        android:hint="@string/Brand"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/ivAvto"
+        app:layout_constraintTop_toBottomOf="@+id/tvBrandGl" />
+
+    <TextView
+        android:id="@+id/tvModel"
+        android:layout_width="58dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="5dp"
+        android:gravity="center"
+        android:hint="@string/Model"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/tvBrand"
+        app:layout_constraintTop_toBottomOf="@+id/tvModelGl" />
+
+    <TextView
+        android:id="@+id/tvYear"
+        android:layout_width="70sp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="@string/Year"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/tvModel"
+        app:layout_constraintTop_toBottomOf="@+id/tvYearGl" />
+
+    <TextView
+        android:id="@+id/tvMotorsize"
+        android:layout_width="50sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:hint="@string/Motorsize"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvMotorsizeGl"
+        app:layout_constraintStart_toEndOf="@+id/tvMotorGL"
+        app:layout_constraintTop_toBottomOf="@+id/tvMotorsizeGl" />
+
+    <TextView
+        android:id="@+id/tvMotor"
+        android:layout_width="70sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:gravity="center"
+        android:hint="@string/Motor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvMotorGL"
+        app:layout_constraintStart_toStartOf="@+id/tvMotorGL"
+        app:layout_constraintTop_toBottomOf="@+id/tvMotorsizeGl" />
+
+    <TextView
+        android:id="@+id/tvKpp"
+        android:layout_width="88dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="3dp"
+        android:hint="@string/Kpp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/tvKPPGl"
+        app:layout_constraintTop_toTopOf="@+id/tvKPPGl" />
+
+    <TextView
+        android:id="@+id/tvMileage"
+        android:layout_width="66dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="3dp"
+        android:hint="@string/Mileage"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/tvMileageGl"
+        app:layout_constraintTop_toTopOf="@+id/tvMileageGl" />
+
+    <TextView
+        android:id="@+id/tvPower"
+        android:layout_width="79dp"
+        android:layout_height="22dp"
+        android:freezesText="false"
+        android:gravity="center"
+        android:hint="@string/Power"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tvMotorsize"
+        app:layout_constraintTop_toBottomOf="@+id/tvMotorsizeGl" />
+
+    <TextView
+        android:id="@+id/tvMileageGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvMileageGl"
+        app:layout_constraintStart_toEndOf="@+id/tvKpp"
+        app:layout_constraintTop_toTopOf="@+id/tvKpp" />
+
+    <TextView
+        android:id="@+id/tvModelGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvModelGl"
+        app:layout_constraintStart_toEndOf="@+id/tvBrand"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBrandGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvBrandGl"
+        app:layout_constraintStart_toEndOf="@+id/ivAvto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvYearGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvYearGl"
+        app:layout_constraintStart_toEndOf="@+id/tvModelGl"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMotorGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvMotorGl"
+        app:layout_constraintStart_toEndOf="@+id/ivAvto"
+        app:layout_constraintTop_toBottomOf="@+id/tvBrand" />
+
+    <TextView
+        android:id="@+id/tvMotorsizeGl"
+        android:layout_width="57dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/tvMotorsizeGl"
+        app:layout_constraintStart_toEndOf="@+id/tvMotorGL"
+        app:layout_constraintTop_toTopOf="@+id/tvMotorGL" />
+
+    <TextView
+        android:id="@+id/tvPowerGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvTowerGl"
+        app:layout_constraintStart_toEndOf="@+id/tvMotorsizeGl"
+        app:layout_constraintTop_toBottomOf="@+id/tvYear" />
+
+    <TextView
+        android:id="@+id/tvKPPGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvKPPGl"
+        app:layout_constraintStart_toStartOf="@+id/tvMotor"
+        app:layout_constraintTop_toBottomOf="@+id/tvMotor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
