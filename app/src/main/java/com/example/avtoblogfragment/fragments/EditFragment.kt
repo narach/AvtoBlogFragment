@@ -22,13 +22,13 @@ import com.example.avtoblogfragment.viewmodels.AvtoblogListviewModel
 class EditFragment(private val navigation: IFragmentCommunication) : Fragment(R.layout.fragment_edit) {
 
     private var imgUri: Uri? = null
-    private val selImgCode = 1
+    private val selImgCode = -1
 
     private var _binding: FragmentEditBinding? = null
     private val binding get() = _binding!!
 
-  var radio1:RadioButton?=null
-  var radio2:RadioButton?=null
+    var radio1:RadioButton?=null
+    var radio2:RadioButton?=null
     var startPoint = 0
     var endPoind = 0
 
@@ -49,12 +49,10 @@ class EditFragment(private val navigation: IFragmentCommunication) : Fragment(R.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-
         val selItemId = avtoblogListViewModel.selectedIndex.value!!
 
                 selectedItem = avtoblogListViewModel.getAvtoblogAtPosition(selItemId)
+                        //   var radio1=binding.radioGroup2.checkedRadioButtonId
 
 
         with(binding) {
@@ -69,23 +67,32 @@ class EditFragment(private val navigation: IFragmentCommunication) : Fragment(R.
             seekBar.setProgress(selectedItem.mileage.toInt())
             ivAvtoImage.setImageDrawable(selectedItem.img)
 
+            sbVolume3.setText(selectedItem.motorsize)
+            sbVolume2.setText(selectedItem.power)
+            sbVolume.setText(selectedItem.mileage)
+
+
             binding.btnSave.setOnClickListener {
+
 
 
                 selectedItem.model = etModelAdd.text.toString()
                 selectedItem.brand = etBrandAdd.text.toString()
                 selectedItem.year = etYearAdd.text.toString()
+
                 selectedItem.motor = radio1?.text.toString()
                 selectedItem.kpp = radio2?.text.toString()
+
                 selectedItem.motorsize = seekBar3.progress.toString()
                 selectedItem.power = seekBar2.progress.toString()
-                selectedItem.mileage = seekBar.progress.toString()
-                        // avtoblogListViewModel.updateAvtoblogAtPosition(se)
+
+                        //avtoblogListViewModel.updateAvtoAtPosition(avtoblog,-1)
                 navigation.listAvto()
             }
 
             radioGroup2.setOnCheckedChangeListener { _, checkedid ->
                 if (checkedid==R.id.rbElAdd) {
+
                     radio1?.text="электро"
                     seekBar3.visibility = View.INVISIBLE
                     tvObDvi.visibility = View.INVISIBLE

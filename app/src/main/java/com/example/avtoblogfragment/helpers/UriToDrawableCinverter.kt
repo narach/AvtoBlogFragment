@@ -10,7 +10,7 @@ object UriToDrawableConverter {
     fun uriToDrawable(uri: String?, context: Context): Drawable? {
         uri?.let {
             val inputStream = context.contentResolver.openInputStream(Uri.parse(uri))
-            return Drawable.createFromStream(inputStream, uri)
+                      return Drawable.createFromStream(inputStream, uri)
         }
         return ContextCompat.getDrawable(context, R.drawable.proekt);
     }

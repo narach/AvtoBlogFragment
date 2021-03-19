@@ -13,5 +13,6 @@ data class AvtoblogItem(
     var kpp: String,
     var motorsize: String,
     var power: String,
-    var mileage: String
+    var mileage: String,
+
 ) : Serializable {}

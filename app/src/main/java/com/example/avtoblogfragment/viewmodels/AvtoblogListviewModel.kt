@@ -20,11 +20,12 @@ class AvtoblogListviewModel : ViewModel() {
         avtoblogListLiveData.value!!.add(avtoblog)
     }
 
+
     fun getAvtoblogAtPosition(position: Int) : AvtoblogItem {
         return avtoblogListLiveData.value!![position]
     }
 
-    fun updateAvtoAtPosition(updatedItem: AvtoblogItem, position: Int) {
+    fun updateAvtoblogAtPosition(updatedItem: AvtoblogItem, position: Int) {
         avtoblogListLiveData.value!!.set(position, updatedItem)
     }
 }

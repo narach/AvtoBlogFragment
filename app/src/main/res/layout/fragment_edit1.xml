@@ -19,8 +19,8 @@
 
     <RadioGroup
         android:id="@+id/radioGroup2"
-        android:layout_width="298dp"
-        android:layout_height="65dp"
+        android:layout_width="306dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="25dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/seekBar3"
@@ -53,68 +53,79 @@
 
     </RadioGroup>
 
-        <RadioGroup
-            android:id="@+id/radioGroup3"
-            android:layout_width="222dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="61dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvKpp"
-            app:layout_constraintTop_toBottomOf="@+id/seekBar2">
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="295dp"
+        android:layout_height="121dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="61dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvKpp"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar2">
 
-            <RadioButton
-                android:id="@+id/rbAvtAdd"
-                android:layout_width="120dp"
-                android:layout_height="match_parent"
-                android:text="@string/Avtomat" />
-
-            <RadioButton
-                android:id="@+id/rbMehAdd"
-                android:layout_width="120dp"
-                android:layout_height="match_parent"
-                android:text="@string/Mehanika" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/tvKpp"
-            android:layout_width="88dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="4dp"
+        <RadioButton
+            android:id="@+id/rbAvtAdd"
+            style="@android:style/Widget.CompoundButton.RadioButton"
+            android:layout_width="163dp"
+            android:layout_height="123dp"
+            android:clickable="true"
+            android:drawableBottom="@drawable/kpp_avto3"
+            android:focusable="true"
             android:gravity="center"
-            android:text="@string/Kpp"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/radioGroup3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/radioGroup3" />
+            android:text="" />
 
-        <TextView
-            android:id="@+id/sbVolume2"
-            android:layout_width="64dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="77dp"
-            android:layout_marginEnd="77dp"
-            android:text="@string/_0"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/seekBar2"
-            app:layout_constraintEnd_toEndOf="@+id/seekBar2"
-            app:layout_constraintStart_toEndOf="@+id/tvObDvi" />
+        <RadioButton
+            android:id="@+id/rbMehAdd"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+            android:layout_width="148dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:drawableBottom="@drawable/kpp_meh4"
+            android:focusable="true"
+            android:foregroundGravity="center"
+            android:freezesText="false"
+            android:text=""
+            app:useMaterialThemeColors="false" />
 
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="@string/save"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/seekBar"
-            app:layout_constraintHorizontal_bias="0.485"
-            app:layout_constraintStart_toStartOf="@+id/seekBar"
-            app:layout_constraintTop_toBottomOf="@+id/seekBar"
-            app:layout_constraintVertical_bias="0.0" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvKpp"
+        android:layout_width="88dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/Kpp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/radioGroup3" />
+
+    <TextView
+        android:id="@+id/sbVolume2"
+        android:layout_width="66dp"
+        android:layout_height="23dp"
+        android:text="@string/_0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar2"
+        app:layout_constraintStart_toStartOf="@+id/seekBar2" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/etBrandAdd"
@@ -137,8 +148,8 @@
 
     <EditText
         android:id="@+id/etModelAdd"
-        android:layout_width="131dp"
-        android:layout_height="35dp"
+        android:layout_width="138dp"
+        android:layout_height="36dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="8dp"
@@ -155,8 +166,9 @@
 
     <EditText
         android:id="@+id/etYearAdd"
-        android:layout_width="129dp"
+        android:layout_width="138dp"
         android:layout_height="39dp"
+        android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="551dp"
         android:autofillHints=""
@@ -170,20 +182,20 @@
         app:layout_constraintStart_toStartOf="@+id/etModelAdd"
         app:layout_constraintTop_toBottomOf="@+id/etModelAdd" />
 
-        <SeekBar
-            android:id="@+id/seekBar"
-            android:layout_width="0dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="80dp"
-            android:layout_weight="1"
-            android:max="500000"
-            android:progress="100"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="52dp"
+        android:layout_weight="1"
+        android:max="500000"
+        android:progress="100"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar2"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />
 
-        <TextView
+    <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -196,15 +208,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />
 
-        <TextView
-            android:id="@+id/sbVolume"
-            android:layout_width="95dp"
-            android:layout_height="22dp"
-            android:text="@string/_0_km"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/seekBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/sbVolume"
+        android:layout_width="95dp"
+        android:layout_height="22dp"
+        android:text="@string/_0_km"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar"
+        app:layout_constraintStart_toStartOf="@+id/seekBar" />
 
         <TextView
             android:id="@+id/textView4"
@@ -220,9 +232,9 @@
 
     <SeekBar
         android:id="@+id/seekBar2"
-        android:layout_width="199dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="19dp"
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="12dp"
         android:max="650"
         android:progress="5"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
@@ -230,19 +242,19 @@
         app:layout_constraintStart_toStartOf="@+id/radioGroup3"
         app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
 
-        <SeekBar
-            android:id="@+id/seekBar3"
-            android:layout_width="195dp"
-            android:layout_height="52dp"
-            android:layout_marginBottom="31dp"
-            android:indeterminate="false"
-            android:max="6000"
-            android:progress="10"
-            app:layout_constraintBottom_toTopOf="@+id/seekBar2"
-            app:layout_constraintEnd_toEndOf="@+id/seekBar2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/seekBar2"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+    <SeekBar
+        android:id="@+id/seekBar3"
+        android:layout_width="230dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="31dp"
+        android:indeterminate="false"
+        android:max="6000"
+        android:progress="10"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/seekBar2"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
         <TextView
             android:id="@+id/tvObDvi"
@@ -257,18 +269,28 @@
             app:layout_constraintEnd_toStartOf="@+id/seekBar3"
             app:layout_constraintStart_toStartOf="@+id/textView4" />
 
-        <TextView
-            android:id="@+id/sbVolume3"
-            android:layout_width="80dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="65dp"
-            android:layout_marginEnd="65dp"
-            android:text="@string/tvOD"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/seekBar3"
-            app:layout_constraintEnd_toEndOf="@+id/seekBar2"
-            app:layout_constraintStart_toStartOf="@+id/seekBar3" />
+    <TextView
+        android:id="@+id/sbVolume3"
+        android:layout_width="80dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/tvOD"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar3"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar3"
+        app:layout_constraintStart_toStartOf="@+id/seekBar3"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
-
+    <ImageView
+        android:id="@+id/ivElectro"
+        android:layout_width="226dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="32dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/electro1"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/sbVolume"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup3"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
