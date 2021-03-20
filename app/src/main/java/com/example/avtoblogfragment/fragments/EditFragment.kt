@@ -1,6 +1,5 @@
 package com.example.avtoblogfragment.fragments
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -8,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
@@ -27,14 +25,11 @@ class EditFragment(private val navigation: IFragmentCommunication) : Fragment(R.
     private var _binding: FragmentEditBinding? = null
     private val binding get() = _binding!!
 
-    var radio1:RadioButton?=null
-    var radio2:RadioButton?=null
     var startPoint = 0
     var endPoind = 0
 
-
     private val avtoblogListViewModel: AvtoblogListviewModel by activityViewModels()
-    private var selectedItem: AvtoblogItem = AvtoblogItem(null, "", "","","","","","","")
+    private lateinit var selectedItem: AvtoblogItem
 
 
     override fun onCreateView(
@@ -48,20 +43,15 @@ class EditFragment(private val navigation: IFragmentCommunication) : Fragment(R.
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val selItemId = avtoblogListViewModel.selectedIndex.value!!
-
-                selectedItem = avtoblogListViewModel.getAvtoblogAtPosition(selItemId)
-                        //   var radio1=binding.radioGroup2.checkedRadioButtonId
-
+        selectedItem = avtoblogListViewModel.getAvtoblogAtPosition(selItemId)
 
         with(binding) {
 
             etModelAdd.setText(selectedItem.model)
             etBrandAdd.setText(selectedItem.brand)
             etYearAdd.setText(selectedItem.year)
-            radio1?.setText(selectedItem.motor)
-            radio2?.setText(selectedItem.kpp)
+
             seekBar3.setProgress(selectedItem.motorsize.toInt())
             seekBar2.setProgress(selectedItem.power.toInt())
             seekBar.setProgress(selectedItem.mileage.toInt())
@@ -71,42 +61,39 @@ class EditFragment(private val navigation: IFragmentCommunication) : Fragment(R.
             sbVolume2.setText(selectedItem.power)
             sbVolume.setText(selectedItem.mileage)
 
+            radioGroup2.check(getEngineTypeId(selectedItem.motor))
+            radioGroup3.check(getKppId(selectedItem.kpp))
 
             binding.btnSave.setOnClickListener {
-
-
-
                 selectedItem.model = etModelAdd.text.toString()
                 selectedItem.brand = etBrandAdd.text.toString()
                 selectedItem.year = etYearAdd.text.toString()
 
-                selectedItem.motor = radio1?.text.toString()
-                selectedItem.kpp = radio2?.text.toString()
+                setEngineType(radioGroup2.checkedRadioButtonId)
+                setKppType(radioGroup3.checkedRadioButtonId)
 
                 selectedItem.motorsize = seekBar3.progress.toString()
                 selectedItem.power = seekBar2.progress.toString()
 
-                        //avtoblogListViewModel.updateAvtoAtPosition(avtoblog,-1)
                 navigation.listAvto()
             }
 
             radioGroup2.setOnCheckedChangeListener { _, checkedid ->
                 if (checkedid==R.id.rbElAdd) {
-
-                    radio1?.text="электро"
+                    selectedItem.motor="электро"
                     seekBar3.visibility = View.INVISIBLE
                     tvObDvi.visibility = View.INVISIBLE
                     sbVolume3.visibility = View.INVISIBLE
                     seekBar3.progress = 0
                 }
                 if (checkedid==R.id.rbBenAdd) {
-                   radio1?.text="бензин"
+                    selectedItem.motor="бензин"
                     seekBar3.visibility = View.VISIBLE
                     tvObDvi.visibility = View.VISIBLE
                     sbVolume3.visibility=View.VISIBLE
                 }
                 if (checkedid==R.id.rbDizAdd) {
-                   radio1?.text="дизель"
+                    selectedItem.motor="дизель"
                     seekBar3.visibility = View.VISIBLE
                     tvObDvi.visibility = View.VISIBLE
                     sbVolume3.visibility=View.VISIBLE
@@ -116,9 +103,9 @@ class EditFragment(private val navigation: IFragmentCommunication) : Fragment(R.
 
             radioGroup3.setOnCheckedChangeListener { _, checkedid ->
                 if (checkedid==R.id.rbAvtAdd)
-                    radio2?.text="автомат"
+                    selectedItem.kpp="автомат"
                 if (checkedid==R.id.rbMehAdd)
-                    radio2?.text="механика"
+                    selectedItem.kpp="механика"
             }
 
             seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
@@ -192,4 +179,37 @@ class EditFragment(private val navigation: IFragmentCommunication) : Fragment(R.
         }
     }
 
+    private fun setEngineType(checkedId: Int) {
+        when(checkedId) {
+            R.id.rbBenAdd -> selectedItem.motor = "бензин"
+            R.id.rbDizAdd -> selectedItem.motor = "дизель"
+            R.id.rbElAdd -> selectedItem.motor = "электро"
+        }
+    }
+
+    private fun setKppType(checkedId: Int) {
+        when(checkedId) {
+            R.id.rbAvtAdd -> selectedItem.kpp = "автомат"
+            R.id.rbMehAdd -> selectedItem.kpp = "механика"
+        }
+    }
+
+    private fun getEngineTypeId(engineType: String) : Int {
+        var engineTypeBtnId = R.id.rbBenAdd
+        when(engineType) {
+            "бензин" -> engineTypeBtnId = R.id.rbBenAdd
+            "дизель" -> engineTypeBtnId = R.id.rbDizAdd
+            "электро" -> engineTypeBtnId = R.id.rbElAdd
+        }
+        return engineTypeBtnId
+    }
+
+    private fun getKppId(kppType: String) : Int {
+        var kppTypeBtnId = R.id.rbAvtAdd
+        when(kppType) {
+            "автомат" -> kppTypeBtnId = R.id.rbAvtAdd
+            "механика" -> kppTypeBtnId = R.id.rbMehAdd
+        }
+        return kppTypeBtnId
+    }
 }
